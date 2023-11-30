@@ -46,7 +46,7 @@ function App() {
     }
   }
   return (
-    <div className='bg-color'>
+    <div className='bg-color h-full'>
       <div className="w-100 bg-color py-2 text-white flex justify-between">
         <div className='flex cursor-pointer'>
           <div className='boxed-border text-3xl  my-auto ml-4 mr-1 border border-white w-8 text-center'>S</div>

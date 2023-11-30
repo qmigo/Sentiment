@@ -1,20 +1,11 @@
-import googleapiclient.discovery
 from django.apps import apps
-
-
-api_service_name = "youtube"
-api_version = "v3"
-DEVELOPER_KEY = "AIzaSyCP6k2vEMDGU328EFzRVIzXsL1EaxzCgKE"
-
-youtube = googleapiclient.discovery.build(
-    api_service_name, api_version, developerKey = DEVELOPER_KEY)
-
 
 def scrape_video_info(videoId):
     if videoId == "" or videoId is None:
         return None
 
     # Retrieve video details
+    youtube = apps.get_app_config('api').youtube
     video_request = youtube.videos().list(
         part="snippet,contentDetails,statistics",
         id=videoId
@@ -46,6 +37,8 @@ def scrape_comments(videoId):
 
     if videoId == "" or videoId is None:
         return None
+    
+    youtube = apps.get_app_config('api').youtube
     
     request = youtube.commentThreads().list(
         part="snippet",

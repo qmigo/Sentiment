@@ -14,14 +14,14 @@ def getFeedback(request):
     
     metric = [[],[]]
 
-    # comments = scrape_comments(videoId)
-    # if comments :
-    #     metric[0] = get_sentiments(comments)
+    comments = scrape_comments(videoId)
+    if comments :
+        metric[0] = get_sentiments(comments)
     
     info = scrape_video_info(videoId)
     if info:
         metric[1] = info
     
-    print(metric)
+    print('hit')
     
     return JsonResponse({'metric':metric})
