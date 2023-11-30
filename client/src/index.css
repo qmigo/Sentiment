@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    overflow-y: hidden;
+}
+.bg-color {
+    background-color: #e23354;
+}
+.search:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+.search:hover>svg{
+    color: rgb(59 130 246);
+}
