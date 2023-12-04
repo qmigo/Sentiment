@@ -22,6 +22,5 @@ def getFeedback(request):
     if info:
         metric[1] = info
     
-    print('hit')
     
     return JsonResponse({'metric':metric})

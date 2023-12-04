@@ -6,10 +6,13 @@
 .bg-color {
     background-color: #e23354;
 }
-.search:hover{
+/* .search:hover{
     background-color: #fff;
     cursor: pointer;
 }
 .search:hover>svg{
-    color: rgb(59 130 246);
+    color: #e23354;
+} */
+.disable-cursor{
+    cursor: not-allowed;
 }

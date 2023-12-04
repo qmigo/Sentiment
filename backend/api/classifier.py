@@ -22,13 +22,11 @@ def scrape_video_info(videoId):
     video_thumbnail = video_info['thumbnails']['medium']['url']
     video_description = video_info.get('description', '')
     video_likes = video_response['items'][0]['statistics'].get('likeCount', 0)
-    video_rating = video_response['items'][0]['statistics'].get('likeCount', 0)  # Use likes as an indicator for rating
     info = {
         'title': video_title,
         'thumbnail': video_thumbnail,
         'description': video_description,
         'likes': video_likes,
-        'rating': video_rating,
     }
     return info
 
@@ -43,7 +41,7 @@ def scrape_comments(videoId):
     request = youtube.commentThreads().list(
         part="snippet",
         videoId=videoId,
-        maxResults = 10
+        maxResults = 100
     )
     response = request.execute()
     items = response['items']
